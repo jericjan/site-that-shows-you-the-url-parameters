@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>a site that shows you the url parameters</title>
+  <meta name="description" content="that's it">
+<style>
+div {
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+<div>
+<h1>a site that shows you the url parameters</h1>
+<h2>that's it</h2>
+<a id="stuff"></a>
+</div>
+<script>
+const urlParams = new URLSearchParams( window.location.search);
+
+
+const
+  keys = urlParams.keys(),
+  values = urlParams.values(),
+  entries = urlParams.entries();
+
+var stuff = ""
+for(const entry of entries) {  
+  stuff += `${entry[0]}: <u>${entry[1]}</u><br>`
+}
+document.querySelector("#stuff").innerHTML = stuff
+</script>
+</body>
+</html>
